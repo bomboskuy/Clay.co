@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClayCo | Cinematic Editorial Wedding Photography</title>
+<link rel="icon" href="assets/favicon-clayco.png" type="image/webp">
+<link rel="shortcut icon" href="assets/favicon-clayco.png">
+<link rel="apple-touch-icon" href="assets/favicon-clayco.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#abcec2",
+                        "surface-bright": "#faf9f8",
+                        "tertiary-fixed": "#e4e4cc",
+                        "inverse-surface": "#2f3130",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffe088",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#717975",
+                        "outline-variant": "#c1c8c4",
+                        "surface-container-low": "#f4f3f2",
+                        "tertiary": "#191b0c",
+                        "secondary": "#735c00",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e3e2e1",
+                        "primary-fixed-dim": "#abcec2",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "secondary-fixed-dim": "#e9c349",
+                        "tertiary-fixed-dim": "#c8c8b0",
+                        "on-secondary-fixed-variant": "#574500",
+                        "inverse-on-surface": "#f1f0f0",
+                        "surface-tint": "#44655b",
+                        "on-primary-fixed-variant": "#2d4d44",
+                        "surface-container-highest": "#e3e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf9f8",
+                        "on-secondary-container": "#745c00",
+                        "on-surface-variant": "#414845",
+                        "surface-container-high": "#e9e8e7",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container": "#eeeeed",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "surface-dim": "#dadad9",
+                        "primary": "#001e18",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#c6eade",
+                        "primary-container": "#13342c",
+                        "surface": "#faf9f8",
+                        "on-background": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#7b9d92",
+                        "tertiary-container": "#2e301f",
+                        "on-tertiary-container": "#979882",
+                        "secondary-container": "#fed65b",
+                        "on-primary-fixed": "#002019",
+                        "on-surface": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "notoSerif": ["Noto Serif", "serif"],
+                        "manrope": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .cinematic-gradient {
+            background: linear-gradient(45deg, #001e18 0%, #13342c 100%);
+        }
+        .masonry {
+            column-count: 2;
+            column-gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-manrope">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-6 md:px-12 py-6 w-full">
+<div class="flex items-center gap-3">
+  <img src="assets/logo-clayco.webp" class="h-10 md:h-14 invert object-contain">
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-emerald-900 dark:text-emerald-50 border-b border-emerald-900/20 font-notoSerif tracking-tight text-sm uppercase" href="#">Portfolio</a>
+<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#stories">Stories</a>
+<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#investment">Investment</a>
+<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900" data-icon="favorite">favorite</span>
+<span class="material-symbols-outlined text-emerald-900" data-icon="shopping_bag">shopping_bag</span>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-primary/40 z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-alt="cinematic vertical portrait of a bride and groom standing in a sun-drenched grand hallway with soft natural light and elegant architectural details" src="assets/hero.webp"/>
+<div class="relative z-20 text-center px-6 max-w-4xl">
+<p class="text-surface-bright/80 uppercase tracking-[0.3em] text-xs mb-6 font-manrope">Cinematic Editorial Photography</p>
+<h1 class="font-notoSerif text-5xl md:text-8xl text-surface-bright leading-tight tracking-tighter mb-8 italic">Capturing moments, preserving emotions.</h1>
+<a class="inline-block cinematic-gradient text-on-primary px-10 py-4 rounded-lg tracking-widest text-xs uppercase hover:opacity-90 transition-all duration-500 shadow-xl shadow-primary-container/20" href="#stories">View Collections</a>
+</div>
+</section>
+<!-- Portfolio Masonry -->
+<section class="py-32 px-6 md:px-12 bg-surface" id="portfolio">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+<div class="max-w-xl">
+<span class="text-secondary font-manrope text-xs tracking-widest uppercase mb-4 block">The Gallery</span>
+<h2 class="font-notoSerif text-4xl md:text-5xl text-primary leading-tight">Curated memories from our most intimate celebrations.</h2>
+</div>
+<div class="text-on-surface-variant font-manrope text-sm tracking-wide border-l border-outline-variant/30 pl-8 hidden md:block">
+                    A collection of whispers, glances, and the soft <br/>glow of love captured across continents.
+                </div>
+</div>
+<div class="masonry">
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="elegant bride in white dress walking through a classical garden courtyard with soft cinematic light" src="assets/Lporto3.webp"/>
+</div>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="black and white close-up of a groom's hand holding bride's hand during ceremony" src="assets/Lporto7.webp"/>
+</div>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="wide shot of a lavish wedding dinner table setup with gold accents and high floral centerpieces" src="assets/Lporto1.webp"/>
+</div>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up portrait of a bride smiling through a lace veil in soft afternoon sun" src="assets/Lporto5.webp"/>
+</div>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="candid moment of bride and groom laughing together during sunset in a meadow" src="assets/Lporto2.webp"/>
+</div>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="cinematic shot of wedding rings on a velvet pillow with dramatic side lighting" src="assets/Lporto6.webp"/>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 overflow-hidden bg-[#13342c]" id="stories">
+  
+  <div class="max-w-7xl mx-auto px-6 mb-12">
+    <h3 class="text-3xl text-white text-center italic">
+      The Highlights
+    </h3>
+  </div>
+
+  <div id="carousel"
+       class="flex overflow-x-auto gap-8 px-6 md:px-[20%] no-scrollbar">
+
+    <!-- TRACK -->
+    <div id="track" class="flex gap-8">
+
+      <!-- ITEMS -->
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto1.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto4.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Lporto4.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto2.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto5.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto6.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto7.webp"/>
+      </div>
+
+      <div class="flex-none w-[300px] md:w-[450px]">
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto8.webp"/>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Video Player -->
+<section class="py-32 bg-surface">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+
+      <iframe 
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/0qsY9pTOReg"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+  </div>
+</section>
+<!-- Pricelist Grid -->
+<section class="py-32 bg-surface-container-low" id="investment">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-24">
+<h2 class="font-notoSerif text-5xl text-primary mb-6">Investment</h2>
+<div class="w-12 h-[1px] bg-secondary mx-auto mb-6"></div>
+<p class="text-on-surface-variant max-w-lg mx-auto text-sm leading-relaxed">Choose a collection that resonates with your vision. Every package is crafted to preserve your legacy.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Paket A -->
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
+<h3 class="font-notoSerif text-xl mb-2">PAKET A</h3>
+<p class="text-secondary font-bold text-2xl mb-8">1.8 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Photographer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Flashdisk Output</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 80 4R Prints + Album Custom</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 12Rs Print + Frame</li>
+</ul>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+</div>
+<!-- Paket B -->
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Popular</div>
+<h3 class="font-notoSerif text-xl mb-2">PAKET B</h3>
+<p class="text-secondary font-bold text-2xl mb-8">2.3 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Unlimited Flashdisk Output</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 4R Prints + Album Custom</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 12Rs Print + Frame</li>
+</ul>
+<a class="block text-center cinematic-gradient text-on-primary py-3 rounded hover:opacity-90 transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+</div>
+<!-- Paket C -->
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Best Deal</div>
+<h3 class="font-notoSerif text-xl mb-2">PAKET C</h3>
+<p class="text-secondary font-bold text-2xl mb-8">3 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket B</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 4R Prints</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Weddingbook 20x30 10 Sheet + Koper</li>
+</ul>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+</div>
+<!-- Paket D -->
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-notoSerif text-xl mb-2">PAKET D</h3>
+<p class="text-secondary font-bold text-2xl mb-8">3.7 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket C</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Videographer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 min Cinematic Video</li>
+</ul>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+</div>
+<!-- Paket E -->
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-notoSerif text-xl mb-2">PAKET E</h3>
+<p class="text-secondary font-bold text-2xl mb-8">4.4 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket D</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 16Rs Prints + Frame</li>
+</ul>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+</div>
+<!-- Paket F -->
+<div class="bg-primary-container p-10 rounded-lg shadow-lg border border-primary relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-notoSerif text-xl mb-2 text-on-primary-container">PAKET F</h3>
+<p class="text-on-primary text-2xl font-bold mb-8">5.1 Jt</p>
+<ul class="space-y-4 text-sm text-on-primary-container/80 mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">stars</span> Everything in Paket E</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">videocam</span> 3-5 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">verified</span> Full Master Data</li>
+</ul>
+<a class="block text-center bg-surface-bright text-primary py-3 rounded hover:bg-surface-variant transition-colors text-xs uppercase tracking-widest font-bold" href="#">The Ultimate Collection</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 bg-surface">
+<div class="max-w-4xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)]">
+<span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
+<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"ClayCo didn't just take photos; they captured the soul of our wedding. Every time I look at our album, I feel the same butterflies I felt that day."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed"></div>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest">Eleanor Vance</p>
+<p class="text-[10px] text-on-surface-variant">Bali Wedding, 2023</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)] md:mt-12">
+<span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
+<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"Their editorial eye is unmatched. The cinematic video brought our families to tears. Professional, calm, and incredibly talented."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed"></div>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest">James Sterling</p>
+<p class="text-[10px] text-on-surface-variant">Lake Como, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="font-notoSerif text-3xl text-primary mb-16 text-center italic">Common Inquiries</h2>
+<div class="space-y-4">
+<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
+                        How far in advance should we book?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">
+                        We recommend booking at least 8-12 months in advance for peak wedding seasons to ensure availability.
+                    </div>
+</details>
+<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
+                        Do you travel for destination weddings?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">
+                        Yes, our bags are always packed. We specialize in destination celebrations and offer tailored travel packages.
+                    </div>
+</details>
+<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
+                        What is your editing turnaround time?
+                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-4 text-on-surface-variant text-sm leading-relaxed border-t border-outline-variant/10 pt-4">
+                        You will receive a 'sneak peek' gallery within 48 hours. The final curated collection and cinematic film are typically delivered within 6-8 weeks.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-emerald-950 dark:bg-emerald-950 text-emerald-50 dark:text-emerald-50 pt-24 pb-12" id="contact">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-emerald-900/30 pb-20 mb-12">
+<div class="space-y-6">
+<div class="text-3xl font-notoSerif text-emerald-50">CLAY.CO</div>
+<p class="text-emerald-50/50 font-manrope text-xs leading-loose max-w-xs">A cinematic editorial studio dedicated to the art of wedding storytelling and the preservation of heritage.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-manrope uppercase tracking-widest text-[10px] text-emerald-50">Studio</h4>
+<ul class="space-y-4 font-manrope text-xs text-emerald-50/60">
+<li><a class="hover:text-emerald-50 transition-opacity" href="#">Portfolio</a></li>
+<li><a class="hover:text-emerald-50 transition-opacity" href="#">Journal</a></li>
+<li><a class="hover:text-emerald-50 transition-opacity" href="#">Inquiry</a></li>
+<li><a class="hover:text-emerald-50 transition-opacity" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-manrope uppercase tracking-widest text-[10px] text-emerald-50">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-emerald-900/30 flex items-center justify-center hover:bg-emerald-900/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-emerald-900/30 flex items-center justify-center hover:bg-emerald-900/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-emerald-900/30 flex items-center justify-center hover:bg-emerald-900/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+</a>
+</div>
+<p class="text-emerald-50/40 text-[10px] font-manrope">IG: @clay.co__</p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-manrope uppercase tracking-widest text-[10px] text-emerald-50/30">© 2026 CLAY.CO. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-emerald-50/50 hover:text-emerald-50 text-[10px] font-manrope uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-emerald-50/50 hover:text-emerald-50 text-[10px] font-manrope uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-emerald-50/50 hover:text-emerald-50 text-[10px] font-manrope uppercase tracking-widest" href="#">Press Kit</a>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp CTA -->
+<a class="fixed bottom-8 right-8 z-[60] cinematic-gradient text-on-primary px-6 py-4 rounded-full flex items-center gap-3 shadow-2xl hover:scale-105 transition-transform duration-300" href="https://wa.me/6282135535225" newtab="">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-xs uppercase tracking-widest font-bold">Book Now</span>
+</a>
+
+
+<script>
+const carousel = document.getElementById('carousel');
+const track = document.getElementById('track');
+
+// clone
+track.innerHTML += track.innerHTML;
+
+window.addEventListener('load', () => {
+
+  const singleWidth = track.scrollWidth / 2;
+
+  // start di tengah
+  carousel.scrollLeft = singleWidth;
+
+  carousel.addEventListener('scroll', () => {
+
+    // 🔥 FIX KANAN (lebih awal)
+    if (carousel.scrollLeft >= singleWidth + 1) {
+      carousel.scrollLeft -= singleWidth;
+    }
+
+    // 🔥 FIX KIRI
+    if (carousel.scrollLeft <= 0) {
+      carousel.scrollLeft += singleWidth;
+    }
+  });
+
+  // AUTO SCROLL
+  let speed = 1; // sesuaikan kecepatan scroll
+
+  function autoScroll() {
+    carousel.scrollLeft += speed;
+    requestAnimationFrame(autoScroll);
+  }
+
+  autoScroll();
+});
+</script>
+
+</body>
+</html>

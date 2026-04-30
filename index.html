@@ -13,6 +13,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<!-- AOS Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -112,7 +116,7 @@
         }
 
         .nav-link {
-          color: rgba(6, 78, 59, 0.6); /* emerald-900/60 */
+          color: rgba(6, 78, 59, 0.6);
           transition: all 0.3s ease;
           cursor: pointer;
         }
@@ -125,14 +129,140 @@
           color: rgba(6, 78, 59, 1);
           border-bottom: 1px solid rgba(6, 78, 59, 0.3);
         }
+
+        /* ===== MOBILE MENU ===== */
+        #mobile-menu {
+          display: none;
+          position: fixed;
+          inset: 0;
+          z-index: 40;
+          background: rgba(250,249,248,0.97);
+          backdrop-filter: blur(20px);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+        }
+        #mobile-menu.open {
+          display: flex;
+        }
+        #mobile-menu a,
+        #mobile-menu div {
+          font-family: 'Noto Serif', serif;
+          color: #001e18;
+          letter-spacing: 0.1em;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s;
+        }
+        #mobile-menu a {
+          font-size: 1.75rem;
+        }
+        #mobile-menu div {
+          font-size: 0; /* separator invisible but still animated */
+          width: 40px;
+          height: 1px;
+          background: rgba(0,30,24,0.15);
+        }
+        #mobile-menu.open a,
+        #mobile-menu.open div {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        #mobile-menu.open > *:nth-child(1) { transition-delay: 0.05s; }
+        #mobile-menu.open > *:nth-child(2) { transition-delay: 0.08s; }
+        #mobile-menu.open > *:nth-child(3) { transition-delay: 0.12s; }
+        #mobile-menu.open > *:nth-child(4) { transition-delay: 0.16s; }
+        #mobile-menu.open > *:nth-child(5) { transition-delay: 0.20s; }
+        #mobile-menu.open > *:nth-child(6) { transition-delay: 0.24s; }
+        #mobile-menu a:hover { color: #735c00; }
+
+        /* Hamburger */
+        #hamburger {
+          display: none;
+          flex-direction: column;
+          gap: 5px;
+          cursor: pointer;
+          z-index: 60;
+          padding: 4px;
+        }
+        @media (max-width: 767px) {
+          #hamburger { display: flex; }
+        }
+        #hamburger span {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: #001e18;
+          border-radius: 2px;
+          transition: all 0.3s ease;
+          transform-origin: center;
+        }
+        #hamburger.open span:nth-child(1) {
+          transform: translateY(7px) rotate(45deg);
+        }
+        #hamburger.open span:nth-child(2) {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+        #hamburger.open span:nth-child(3) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===== LAZY IMAGE ===== */
+        img[data-src] {
+          opacity: 0;
+          transition: opacity 0.6s ease;
+        }
+        img.loaded {
+          opacity: 1;
+        }
+
+        /* ===== AOS custom tweaks ===== */
+        /* Only block pointer-events on non-interactive AOS elements */
+        [data-aos]:not(a):not(button) {
+          pointer-events: none;
+        }
+        [data-aos].aos-animate {
+          pointer-events: auto;
+        }
+
+        /* Touch-friendly tap targets */
+        @media (max-width: 767px) {
+          .masonry {
+            column-count: 1;
+          }
+          summary {
+            padding: 1.25rem !important;
+          }
+        }
+
+
 </style>
 </head>
 
 <body class="bg-surface text-on-surface font-manrope">
+
+<!-- Mobile Full-Screen Menu -->
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <!-- Instagram di dalam menu mobile, paling atas -->
+  <a href="https://instagram.com/clay.co__" target="_blank" class="mobile-nav-link uppercase tracking-widest flex items-center gap-3">
+    <span class="material-symbols-outlined" style="font-size:1.5rem;">photo_camera</span>
+    @clay.co__
+  </a>
+  <div style="width:40px;height:1px;background:rgba(0,30,24,0.15);margin:-0.5rem 0;"></div>
+  <a data-target="portfolio" class="mobile-nav-link uppercase tracking-widest">Portfolio</a>
+  <a data-target="stories" class="mobile-nav-link uppercase tracking-widest">Stories</a>
+  <a data-target="investment" class="mobile-nav-link uppercase tracking-widest">Investment</a>
+  <a data-target="contact" class="mobile-nav-link uppercase tracking-widest">Contact</a>
+</div>
+
 <!-- Top Navigation -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm px-6 md:px-12 py-6">
 
-  <div class="grid grid-cols-3 items-center">
+  <!-- Mobile: flex dengan logo kiri, hamburger kanan -->
+  <!-- Desktop: grid 3 kolom seperti semula -->
+  <div class="flex items-center justify-between md:grid md:grid-cols-3">
 
     <!-- LEFT: LOGO -->
     <div class="flex justify-start">
@@ -142,7 +272,7 @@
       </a>
     </div>
 
-    <!-- CENTER: MENU -->
+    <!-- CENTER: MENU (desktop only) -->
     <div class="hidden md:flex justify-center items-center gap-8">
 
       <a class="nav-link active font-notoSerif text-sm uppercase"
@@ -159,22 +289,22 @@
 
     </div>
 
-    <!-- RIGHT: CTA -->
-    <div class="flex justify-end items-center gap-4">
+    <!-- RIGHT: Instagram (desktop only) + Hamburger (mobile only) -->
+    <div class="flex justify-end items-center gap-3">
 
-      <!-- Instagram -->
+      <!-- Instagram — hanya tampil di desktop -->
       <a href="https://instagram.com/clay.co__"
          target="_blank"
-         class="text-emerald-900 hover:opacity-70 transition">
+         class="hidden md:flex text-emerald-900 hover:opacity-70 transition">
         <span class="material-symbols-outlined">photo_camera</span>
       </a>
 
-      <!-- WhatsApp -->
-      <!-- <a href="https://wa.me/628123456789"
-         target="_blank"
-         class="bg-emerald-900 text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">
-        WhatsApp
-      </a> -->
+      <!-- Hamburger (mobile only) -->
+      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
 
@@ -185,52 +315,53 @@
 <!-- Hero Section -->
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-primary/40 z-10"></div>
-<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-alt="cinematic vertical portrait of a bride and groom standing in a sun-drenched grand hallway with soft natural light and elegant architectural details" src="assets/hero.webp"/>
+<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-src="assets/hero.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cinematic vertical portrait of a bride and groom standing in a sun-drenched grand hallway with soft natural light and elegant architectural details"/>
 <div class="relative z-20 text-center px-6 max-w-4xl">
-<p class="text-surface-bright/80 uppercase tracking-[0.3em] text-xs mb-6 font-manrope">Cinematic Editorial Photography</p>
-<h1 class="font-notoSerif text-5xl md:text-8xl text-surface-bright leading-tight tracking-tighter mb-8 italic">Capturing moments, preserving emotions.</h1>
-<a class="inline-block cinematic-gradient text-on-primary px-10 py-4 rounded-lg tracking-widest text-xs uppercase hover:opacity-90 transition-all duration-500 shadow-xl shadow-primary-container/20" href="#stories">View Collections</a>
+<p class="text-surface-bright/80 uppercase tracking-[0.3em] text-xs mb-6 font-manrope" data-aos="fade-down" data-aos-delay="200">Cinematic Editorial Photography</p>
+<h1 class="font-notoSerif text-5xl md:text-8xl text-surface-bright leading-tight tracking-tighter mb-8 italic" data-aos="fade-up" data-aos-delay="400">Capturing moments, preserving emotions.</h1>
+<a class="inline-block cinematic-gradient text-on-primary px-10 py-4 rounded-lg tracking-widest text-xs uppercase hover:opacity-90 transition-all duration-500 shadow-xl shadow-primary-container/20" href="#stories" data-aos="fade-up" data-aos-delay="600">View Collections</a>
 </div>
 </section>
+
 <!-- Portfolio Masonry -->
 <section class="py-32 px-6 md:px-12 bg-surface" id="portfolio">
 <div class="max-w-7xl mx-auto">
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-<div class="max-w-xl">
+<div class="max-w-xl" data-aos="fade-right">
 <span class="text-secondary font-manrope text-xs tracking-widest uppercase mb-4 block">The Gallery</span>
 <h2 class="font-notoSerif text-4xl md:text-5xl text-primary leading-tight">Curated memories from our most intimate celebrations.</h2>
 </div>
-<div class="text-on-surface-variant font-manrope text-sm tracking-wide border-l border-outline-variant/30 pl-8 hidden md:block">
+<div class="text-on-surface-variant font-manrope text-sm tracking-wide border-l border-outline-variant/30 pl-8 hidden md:block" data-aos="fade-left" data-aos-delay="200">
                     A collection of whispers, glances, and the soft <br/>glow of love captured across continents.
                 </div>
 </div>
 <div class="masonry">
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="elegant bride in white dress walking through a classical garden courtyard with soft cinematic light" src="assets/Lporto3.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="0">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto3.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="elegant bride in white dress walking through a classical garden courtyard with soft cinematic light"/>
 </div>
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="black and white close-up of a groom's hand holding bride's hand during ceremony" src="assets/Lporto7.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto7.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="black and white close-up of a groom's hand holding bride's hand during ceremony"/>
 </div>
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="wide shot of a lavish wedding dinner table setup with gold accents and high floral centerpieces" src="assets/Lporto1.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="0">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto1.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="wide shot of a lavish wedding dinner table setup with gold accents and high floral centerpieces"/>
 </div>
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up portrait of a bride smiling through a lace veil in soft afternoon sun" src="assets/Lporto5.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto5.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="close up portrait of a bride smiling through a lace veil in soft afternoon sun"/>
 </div>
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="candid moment of bride and groom laughing together during sunset in a meadow" src="assets/Lporto2.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="0">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto2.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="candid moment of bride and groom laughing together during sunset in a meadow"/>
 </div>
-<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl">
-<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-alt="cinematic shot of wedding rings on a velvet pillow with dramatic side lighting" src="assets/Lporto6.webp"/>
+<div class="masonry-item group cursor-pointer overflow-hidden rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" data-src="assets/Lporto6.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cinematic shot of wedding rings on a velvet pillow with dramatic side lighting"/>
 </div>
 </div>
 </div>
 </section>
 
-<section class="py-24 overflow-hidden bg-[#13342c]" id="stories">
+<section class="py-24 bg-[#13342c]" id="stories">
   
   <div class="max-w-7xl mx-auto px-6 mb-12">
-    <h3 class="text-3xl text-white text-center italic">
+    <h3 class="text-3xl text-white text-center italic" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       The Highlights
     </h3>
   </div>
@@ -241,37 +372,37 @@
     <!-- TRACK -->
     <div id="track" class="flex gap-8">
 
-      <!-- ITEMS -->
+      <!-- ITEMS - NO lazy load here: carousel clones require all imgs pre-loaded -->
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto1.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto1.webp" alt="Wedding highlight photo 1"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto4.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto4.webp" alt="Wedding highlight photo 2"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Lporto4.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Lporto4.webp" alt="Wedding highlight photo 3"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto2.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto2.webp" alt="Wedding highlight photo 4"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto5.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto5.webp" alt="Wedding highlight photo 5"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto6.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto6.webp" alt="Wedding highlight photo 6"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto7.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto7.webp" alt="Wedding highlight photo 7"/>
       </div>
 
       <div class="flex-none w-[300px] md:w-[450px]">
-        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto8.webp"/>
+        <img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/Pporto8.webp" alt="Wedding highlight photo 8"/>
       </div>
 
     </div>
@@ -280,19 +411,18 @@
 
 
 <!-- Video Player -->
-<section class="py-32 bg-surface">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="py-32 bg-surface" id="video-section">
+  <div class="max-w-6xl mx-auto px-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
-
-      <iframe 
-        class="w-full h-full"
+      <iframe
+        class="absolute inset-0 w-full h-full"
         src="https://www.youtube.com/embed/0qsY9pTOReg"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
+        allowfullscreen
+        loading="lazy">
       </iframe>
-
     </div>
   </div>
 </section>
@@ -300,14 +430,14 @@
 <!-- Pricelist Grid -->
 <section class="py-24 overflow-hidden bg-[#13342c]" id="investment">
 <div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-24">
+<div class="text-center mb-24" data-aos="fade-up">
 <h2 class="font-notoSerif text-5xl text-primary text-white mb-6">Investment</h2>
 <div class="w-12 h-[1px] bg-secondary mx-auto mb-6"></div>
 <p class="text-on-surface-variant max-w-lg mx-auto text-white text-sm leading-relaxed">Choose a collection that resonates with your vision. Every package is crafted to preserve your legacy.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Paket A -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="0">
 <h3 class="font-notoSerif text-xl mb-2">PAKET A</h3>
 <p class="text-secondary font-bold text-2xl mb-8">1.8 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
@@ -321,7 +451,7 @@
 <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket B -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative" data-aos="fade-up" data-aos-delay="100">
 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Popular</div>
 <h3 class="font-notoSerif text-xl mb-2">PAKET B</h3>
 <p class="text-secondary font-bold text-2xl mb-8">2.3 Jt</p>
@@ -336,7 +466,7 @@
 <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket C -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative" data-aos="fade-up" data-aos-delay="200">
 <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Best Deal</div>
 <h3 class="font-notoSerif text-xl mb-2">PAKET C</h3>
 <p class="text-secondary font-bold text-2xl mb-8">3 Jt</p>
@@ -352,7 +482,7 @@
 <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket D -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10" data-aos="fade-up" data-aos-delay="0">
 <h3 class="font-notoSerif text-xl mb-2">PAKET D</h3>
 <p class="text-secondary font-bold text-2xl mb-8">3.7 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
@@ -369,7 +499,7 @@
 <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket E -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10" data-aos="fade-up" data-aos-delay="100">
 <h3 class="font-notoSerif text-xl mb-2">PAKET E</h3>
 <p class="text-secondary font-bold text-2xl mb-8">4.4 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
@@ -386,7 +516,7 @@
 <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket F -->
-<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10" data-aos="fade-up" data-aos-delay="200">
 <h3 class="font-notoSerif text-xl mb-2">PAKET F</h3>
 <p class="text-secondary font-bold text-2xl mb-8">5.1 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
@@ -412,7 +542,7 @@
 <section class="py-32 bg-surface">
 <div class="max-w-4xl mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)]">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)]" data-aos="fade-up" data-aos-delay="0">
 <span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
 <p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"ClayCo didn't just take photos; they captured the soul of our wedding. Every time I look at our album, I feel the same butterflies I felt that day."</p>
 <div class="flex items-center gap-4">
@@ -423,7 +553,7 @@
 </div>
 </div>
 </div>
-<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)] md:mt-12">
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)] md:mt-12" data-aos="fade-up" data-aos-delay="150">
 <span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
 <p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"Their editorial eye is unmatched. The cinematic video brought our families to tears. Professional, calm, and incredibly talented."</p>
 <div class="flex items-center gap-4">
@@ -440,9 +570,9 @@
 <!-- FAQ Accordion -->
 <section class="py-32 bg-surface-container-low">
 <div class="max-w-3xl mx-auto px-6">
-<h2 class="font-notoSerif text-3xl text-primary mb-16 text-center italic">Common Inquiries</h2>
+<h2 class="font-notoSerif text-3xl text-primary mb-16 text-center italic" data-aos="fade-up">Common Inquiries</h2>
 <div class="space-y-4">
-<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<details class="group bg-surface p-6 rounded-lg cursor-pointer" data-aos="fade-up" data-aos-delay="0">
 <summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
                         How far in advance should we book?
                         <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
@@ -451,7 +581,7 @@
                         We recommend booking at least 8-12 months in advance for peak wedding seasons to ensure availability.
                     </div>
 </details>
-<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<details class="group bg-surface p-6 rounded-lg cursor-pointer" data-aos="fade-up" data-aos-delay="100">
 <summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
                         Do you travel for destination weddings?
                         <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
@@ -460,7 +590,7 @@
                         Yes, our bags are always packed. We specialize in destination celebrations and offer tailored travel packages.
                     </div>
 </details>
-<details class="group bg-surface p-6 rounded-lg cursor-pointer">
+<details class="group bg-surface p-6 rounded-lg cursor-pointer" data-aos="fade-up" data-aos-delay="200">
 <summary class="flex justify-between items-center font-notoSerif text-lg text-primary list-none">
                         What is your editing turnaround time?
                         <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
@@ -475,11 +605,11 @@
 <!-- Footer -->
 <footer class="bg-emerald-950 dark:bg-emerald-950 text-emerald-50 dark:text-emerald-50 pt-24 pb-12" id="contact">
 <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-emerald-900/30 pb-20 mb-12">
-<div class="space-y-6">
+<div class="space-y-6" data-aos="fade-up" data-aos-delay="0">
 <div class="text-3xl font-notoSerif text-emerald-50">CLAY.CO</div>
 <p class="text-emerald-50/50 font-manrope text-xs leading-loose max-w-xs">A cinematic editorial studio dedicated to the art of wedding storytelling and the preservation of heritage.</p>
 </div>
-<div class="space-y-6">
+<div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
 <h4 class="font-manrope uppercase tracking-widest text-[10px] text-emerald-50">Studio</h4>
 <ul class="space-y-4 font-manrope text-xs text-emerald-50/60">
 <li><a class="hover:text-emerald-50 transition-opacity" href="#">Portfolio</a></li>
@@ -488,7 +618,7 @@
 <li><a class="hover:text-emerald-50 transition-opacity" href="#">Careers</a></li>
 </ul>
 </div>
-<div class="space-y-6">
+<div class="space-y-6" data-aos="fade-up" data-aos-delay="200">
 <h4 class="font-manrope uppercase tracking-widest text-[10px] text-emerald-50">Connect</h4>
 <div class="flex gap-4">
 <a class="w-10 h-10 rounded-full border border-emerald-900/30 flex items-center justify-center hover:bg-emerald-900/20 transition-colors" href="#">
@@ -519,98 +649,216 @@
 <span class="text-xs uppercase tracking-widest font-bold">Book Now</span>
 </a>
 
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 <script>
-const carousel = document.getElementById('carousel');
-const track = document.getElementById('track');
+// ===== AOS INIT =====
+AOS.init({
+  duration: 700,
+  easing: 'ease-out-cubic',
+  once: true,
+  offset: 40,
+  startEvent: 'DOMContentLoaded',
+  throttleDelay: 50,
+  debounceDelay: 50,
+  disable: false
+});
 
-// clone
-track.innerHTML += track.innerHTML;
+// ===== LAZY LOAD IMAGES =====
+// rootMargin sangat besar (1500px) agar gambar dimuat jauh sebelum user scroll ke sana
+// Ini mengatasi koneksi lambat di mobile
+(function() {
+  const lazyImgs = document.querySelectorAll('img[data-src]');
+  if (!lazyImgs.length) return;
 
-window.addEventListener('load', () => {
-
-  const singleWidth = track.scrollWidth / 2;
-
-  // start di tengah
-  carousel.scrollLeft = singleWidth;
-
-  carousel.addEventListener('scroll', () => {
-
-    // 🔥 FIX KANAN (lebih awal)
-    if (carousel.scrollLeft >= singleWidth + 1) {
-      carousel.scrollLeft -= singleWidth;
+  function loadImg(img) {
+    if (img.dataset.src) {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+      img.addEventListener('load', () => img.classList.add('loaded'), { once: true });
+      img.addEventListener('error', () => img.classList.add('loaded'), { once: true });
     }
-
-    // 🔥 FIX KIRI
-    if (carousel.scrollLeft <= 0) {
-      carousel.scrollLeft += singleWidth;
-    }
-  });
-
-  // AUTO SCROLL
-  let speed = 1; // sesuaikan kecepatan scroll
-
-  function autoScroll() {
-    carousel.scrollLeft += speed;
-    requestAnimationFrame(autoScroll);
   }
 
-  autoScroll();
-});
-
-const links = document.querySelectorAll('.nav-link');
-
-// OFFSET NAVBAR (biar gak ketutup)
-const offset = 100;
-
-// CLICK SCROLL (tanpa ubah URL)
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    const targetId = link.getAttribute('data-target');
-    const section = document.getElementById(targetId);
-
-    const y = section.offsetTop - offset;
-
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadImg(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      // 1500px preload buffer — gambar sudah siap sebelum user tiba
+      rootMargin: '1500px 0px'
     });
 
-    setActive(link);
-  });
-});
+    lazyImgs.forEach(img => observer.observe(img));
+  } else {
+    // Fallback: load semua langsung
+    lazyImgs.forEach(loadImg);
+  }
 
-// SET ACTIVE
-function setActive(activeLink) {
-  links.forEach(link => link.classList.remove('active'));
-  activeLink.classList.add('active');
+  // Safety net: paksa load semua setelah 1.5 detik — jaga-jaga IntersectionObserver lambat
+  setTimeout(() => {
+    document.querySelectorAll('img[data-src]').forEach(loadImg);
+  }, 1500);
+})();
+
+// ===== CAROUSEL — infinite auto-scroll, TIDAK pernah berhenti =====
+(function() {
+  const carousel = document.getElementById('carousel');
+  const track = document.getElementById('track');
+  if (!carousel || !track) return;
+
+  // Clone items untuk infinite loop
+  track.innerHTML += track.innerHTML;
+
+  let singleWidth = 0;
+  let rafId = null;
+  const SPEED = 1; // px per frame, ~60fps = 60px/s
+
+  function initCarousel() {
+    singleWidth = track.scrollWidth / 2;
+    // Mulai dari copy kedua agar bisa scroll ke kiri juga
+    carousel.scrollLeft = singleWidth;
+    startAutoScroll();
+  }
+
+  function startAutoScroll() {
+    if (rafId) cancelAnimationFrame(rafId);
+
+    function step() {
+      carousel.scrollLeft += SPEED;
+
+      // Loop maju: saat sudah di ujung copy kedua, lompat ke awal copy kedua
+      if (carousel.scrollLeft >= singleWidth * 2) {
+        carousel.scrollLeft -= singleWidth;
+      }
+      // Loop mundur (jaga-jaga jika user drag ke kiri)
+      if (carousel.scrollLeft <= 0) {
+        carousel.scrollLeft += singleWidth;
+      }
+
+      rafId = requestAnimationFrame(step);
+    }
+
+    rafId = requestAnimationFrame(step);
+  }
+
+  // Touch: tetap scroll otomatis, tapi izinkan swipe manual tanpa gangguan
+  // Tidak ada pause sama sekali — carousel terus berputar
+  carousel.style.pointerEvents = 'auto';
+
+  // Tunggu semua gambar carousel selesai dimuat agar scrollWidth akurat
+  const carouselImgs = track.querySelectorAll('img');
+  let loaded = 0;
+  const total = carouselImgs.length;
+
+  if (total === 0) { initCarousel(); return; }
+
+  carouselImgs.forEach(img => {
+    if (img.complete && img.naturalWidth > 0) {
+      loaded++;
+      if (loaded === total) initCarousel();
+    } else {
+      img.addEventListener('load', () => { loaded++; if (loaded === total) initCarousel(); });
+      img.addEventListener('error', () => { loaded++; if (loaded === total) initCarousel(); });
+    }
+  });
+
+  // Fallback kalau gambar lambat
+  setTimeout(() => { if (singleWidth === 0) initCarousel(); }, 2000);
+})();
+
+// ===== NAV SCROLL =====
+const NAV_OFFSET = 90;
+const NAV_TARGETS = ['portfolio', 'stories', 'investment', 'contact'];
+
+function getScrollTarget(id) {
+  return document.getElementById(id);
 }
 
-// SCROLL DETECT (auto highlight)
-window.addEventListener('scroll', () => {
-  let current = "";
+function scrollToTarget(id) {
+  const el = getScrollTarget(id);
+  if (!el) return;
+  const y = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
 
-  document.querySelectorAll("section").forEach(section => {
-    const sectionTop = section.offsetTop - offset;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
+const desktopLinks = document.querySelectorAll('.nav-link');
 
-  links.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("data-target") === current) {
-      link.classList.add("active");
-    }
+desktopLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('data-target');
+    scrollToTarget(targetId);
+    setActiveLink(targetId);
   });
 });
+
+function setActiveLink(activeId) {
+  desktopLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('data-target') === activeId);
+  });
+}
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  NAV_TARGETS.forEach(id => {
+    const el = getScrollTarget(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top;
+    if (top <= NAV_OFFSET + 40) current = id;
+  });
+  if (current) setActiveLink(current);
+}, { passive: true });
 
 document.getElementById('logo-link').addEventListener('click', function(e) {
   e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  desktopLinks.forEach(l => l.classList.remove('active'));
+});
+
+// ===== MOBILE HAMBURGER MENU =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+function openMenu() {
+  mobileMenu.classList.add('open');
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const targetId = link.getAttribute('data-target');
+    closeMenu();
+    setTimeout(() => scrollToTarget(targetId), 320);
   });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMenu();
+});
+
+// Re-trigger AOS setelah semua elemen settle
+window.addEventListener('load', () => {
+  setTimeout(() => AOS.refresh(), 300);
 });
 </script>
 

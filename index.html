@@ -4,9 +4,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ClayCo | Cinematic Editorial Wedding Photography</title>
-<link rel="icon" href="assets/favicon-clayco.png" type="image/webp">
-<link rel="shortcut icon" href="assets/favicon-clayco.png">
-<link rel="apple-touch-icon" href="assets/favicon-clayco.png">
+<link rel="icon" href="assets/logofavicon-clayco.webp" type="image/webp">
+<link rel="shortcut icon" href="assets/logofavicon-clayco.webp">
+<link rel="apple-touch-icon" href="assets/logofavicon-clayco.webp">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
@@ -110,29 +110,78 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-    </style>
+
+        .nav-link {
+          color: rgba(6, 78, 59, 0.6); /* emerald-900/60 */
+          transition: all 0.3s ease;
+          cursor: pointer;
+        }
+
+        .nav-link:hover {
+          color: rgba(6, 78, 59, 1);
+        }
+
+        .nav-link.active {
+          color: rgba(6, 78, 59, 1);
+          border-bottom: 1px solid rgba(6, 78, 59, 0.3);
+        }
+</style>
 </head>
 
 <body class="bg-surface text-on-surface font-manrope">
 <!-- Top Navigation -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-6 md:px-12 py-6 w-full">
-<div class="flex items-center gap-3">
-  <img src="assets/logo-clayco.webp" class="h-10 md:h-14 invert object-contain">
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-emerald-900 dark:text-emerald-50 border-b border-emerald-900/20 font-notoSerif tracking-tight text-sm uppercase" href="#">Portfolio</a>
-<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#stories">Stories</a>
-<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#investment">Investment</a>
-<a class="text-emerald-900/60 dark:text-emerald-50/60 hover:text-emerald-900 transition-colors duration-500 font-notoSerif tracking-tight text-sm uppercase" href="#contact">Contact</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-emerald-900" data-icon="favorite">favorite</span>
-<span class="material-symbols-outlined text-emerald-900" data-icon="shopping_bag">shopping_bag</span>
-<button class="md:hidden">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-emerald-950/80 backdrop-blur-xl shadow-sm px-6 md:px-12 py-6">
+
+  <div class="grid grid-cols-3 items-center">
+
+    <!-- LEFT: LOGO -->
+    <div class="flex justify-start">
+      <a href="#" id="logo-link">
+        <img src="assets/logo-clayco.webp"
+             class="h-10 md:h-14 object-contain cursor-pointer">
+      </a>
+    </div>
+
+    <!-- CENTER: MENU -->
+    <div class="hidden md:flex justify-center items-center gap-8">
+
+      <a class="nav-link active font-notoSerif text-sm uppercase"
+         data-target="portfolio">Portfolio</a>
+
+      <a class="nav-link font-notoSerif text-sm uppercase"
+         data-target="stories">Stories</a>
+
+      <a class="nav-link font-notoSerif text-sm uppercase"
+         data-target="investment">Investment</a>
+
+      <a class="nav-link font-notoSerif text-sm uppercase"
+         data-target="contact">Contact</a>
+
+    </div>
+
+    <!-- RIGHT: CTA -->
+    <div class="flex justify-end items-center gap-4">
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/clay.co__"
+         target="_blank"
+         class="text-emerald-900 hover:opacity-70 transition">
+        <span class="material-symbols-outlined">photo_camera</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <!-- <a href="https://wa.me/628123456789"
+         target="_blank"
+         class="bg-emerald-900 text-white px-4 py-2 rounded-full text-sm hover:opacity-90 transition">
+        WhatsApp
+      </a> -->
+
+    </div>
+
+  </div>
+
 </nav>
+
 <!-- Hero Section -->
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-primary/40 z-10"></div>
@@ -247,13 +296,14 @@
     </div>
   </div>
 </section>
+
 <!-- Pricelist Grid -->
-<section class="py-32 bg-surface-container-low" id="investment">
+<section class="py-24 overflow-hidden bg-[#13342c]" id="investment">
 <div class="max-w-7xl mx-auto px-6">
 <div class="text-center mb-24">
-<h2 class="font-notoSerif text-5xl text-primary mb-6">Investment</h2>
+<h2 class="font-notoSerif text-5xl text-primary text-white mb-6">Investment</h2>
 <div class="w-12 h-[1px] bg-secondary mx-auto mb-6"></div>
-<p class="text-on-surface-variant max-w-lg mx-auto text-sm leading-relaxed">Choose a collection that resonates with your vision. Every package is crafted to preserve your legacy.</p>
+<p class="text-on-surface-variant max-w-lg mx-auto text-white text-sm leading-relaxed">Choose a collection that resonates with your vision. Every package is crafted to preserve your legacy.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Paket A -->
@@ -264,11 +314,11 @@
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Photographer</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Flashdisk Output</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 80 4R Prints + Album Custom</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 12Rs Print + Frame</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 80 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Framed Photo (12Rs) </li>
 </ul>
-<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket B -->
 <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
@@ -279,11 +329,11 @@
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Unlimited Flashdisk Output</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 4R Prints + Album Custom</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 12Rs Print + Frame</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Framed Photo (12Rs) </li>
 </ul>
-<a class="block text-center cinematic-gradient text-on-primary py-3 rounded hover:opacity-90 transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket C -->
 <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
@@ -291,50 +341,73 @@
 <h3 class="font-notoSerif text-xl mb-2">PAKET C</h3>
 <p class="text-secondary font-bold text-2xl mb-8">3 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket B</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 4R Prints</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Framed Photo (12Rs) </li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Weddingbook 20x30 10 Sheet + Koper</li>
 </ul>
-<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket D -->
 <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
 <h3 class="font-notoSerif text-xl mb-2">PAKET D</h3>
 <p class="text-secondary font-bold text-2xl mb-8">3.7 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket C</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
 <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Videographer</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span> 1 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Framed Photo (12Rs) </li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Weddingbook 20x30 10 Sheet + Koper</li>
 </ul>
-<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket E -->
 <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
 <h3 class="font-notoSerif text-xl mb-2">PAKET E</h3>
 <p class="text-secondary font-bold text-2xl mb-8">4.4 Jt</p>
 <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Everything in Paket D</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 min Cinematic Video</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 16Rs Prints + Frame</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Videographer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span> 2 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Weddingbook 20x30 10 Sheet + Koper</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Printed Photos (16Rs) with Frame</li>
 </ul>
-<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Inquire</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 <!-- Paket F -->
-<div class="bg-primary-container p-10 rounded-lg shadow-lg border border-primary relative overflow-hidden">
-<div class="relative z-10">
-<h3 class="font-notoSerif text-xl mb-2 text-on-primary-container">PAKET F</h3>
-<p class="text-on-primary text-2xl font-bold mb-8">5.1 Jt</p>
-<ul class="space-y-4 text-sm text-on-primary-container/80 mb-12">
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">stars</span> Everything in Paket E</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">videocam</span> 3-5 min Cinematic Video</li>
-<li class="flex items-center gap-3"><span class="material-symbols-outlined text-on-primary text-lg">verified</span> Full Master Data</li>
+<div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-notoSerif text-xl mb-2">PAKET F</h3>
+<p class="text-secondary font-bold text-2xl mb-8">5.1 Jt</p>
+<ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Photographers</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 1 Videographer</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span> 3-5 min Cinematic Video</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Family &amp; Guest Photos</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Candid Makeup</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> All Files Delivered (Flashdisk)</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 120 Printed Photos (4R) with Custom Album</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> Weddingbook 20x30 10 Sheet + Koper</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span> 2 Printed Photos (16Rs) with Frame</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">verified</span> Full Master Data</li>
 </ul>
-<a class="block text-center bg-surface-bright text-primary py-3 rounded hover:bg-surface-variant transition-colors text-xs uppercase tracking-widest font-bold" href="#">The Ultimate Collection</a>
+<a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="#">Check Availability</a>
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <!-- Testimonials -->
 <section class="py-32 bg-surface">
 <div class="max-w-4xl mx-auto px-6">
@@ -483,6 +556,61 @@ window.addEventListener('load', () => {
   }
 
   autoScroll();
+});
+
+const links = document.querySelectorAll('.nav-link');
+
+// OFFSET NAVBAR (biar gak ketutup)
+const offset = 100;
+
+// CLICK SCROLL (tanpa ubah URL)
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    const targetId = link.getAttribute('data-target');
+    const section = document.getElementById(targetId);
+
+    const y = section.offsetTop - offset;
+
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth'
+    });
+
+    setActive(link);
+  });
+});
+
+// SET ACTIVE
+function setActive(activeLink) {
+  links.forEach(link => link.classList.remove('active'));
+  activeLink.classList.add('active');
+}
+
+// SCROLL DETECT (auto highlight)
+window.addEventListener('scroll', () => {
+  let current = "";
+
+  document.querySelectorAll("section").forEach(section => {
+    const sectionTop = section.offsetTop - offset;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("data-target") === current) {
+      link.classList.add("active");
+    }
+  });
+});
+
+document.getElementById('logo-link').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 });
 </script>
 

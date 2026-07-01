@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ClayCo | Cinematic Editorial Wedding Photography</title>
-<link rel="icon" href="assets/logofavicon-clayco.webp" type="image/webp">
-<link rel="shortcut icon" href="assets/logo/logofavicon-clayco.webp">
-<link rel="apple-touch-icon" href="assets/logo/logofavicon-clayco.webp">
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<html class="scroll-smooth" lang="en">
+<head>
+  <title>ClayCo | Wedding, Prewedding & Maternity Photography Semarang</title>
+    <meta charset="utf-8"/>
+    <meta name="robots" content="index, follow">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description"
+      content="ClayCo is a cinematic photography and videography studio specializing in weddings, preweddings, engagements, and maternity sessions.">
+    <meta property="og:title" content="ClayCo | Wedding, Prewedding & Maternity Photography">
+    <meta property="og:description" content="Cinematic Storytelling">
+    <meta property="og:image" content="assets/logo/logo-clayco.webp">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#13342c">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- <meta property="og:url" content="https://clayco.id/"> -->
+     
+    <meta name="twitter:title" content="ClayCo | Cinematic Wedding Photography">
+    <meta name="twitter:description" content="Wedding, Prewedding, Engagement and Maternity Photography">
+    <meta name="twitter:image" content="assets/logo/logo-clayco.webp">
+
+    <!-- <link rel="canonical" href="https://clayco.id/"> -->
+    <link rel="icon" href="assets/logo/logofavicon-clayco.webp" type="image/webp">
+    <link rel="shortcut icon" href="assets/logo/logofavicon-clayco.webp">
+    <link rel="apple-touch-icon" href="assets/logo/logofavicon-clayco.webp">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
 <script id="tailwind-config">
 tailwind.config = {
   darkMode: "class",
@@ -156,6 +173,16 @@ tailwind.config = {
     .masonry { column-count:1; }
     summary { padding:1.25rem !important; }
   }
+
+    #carousel{
+      overflow:hidden;
+  }
+
+  #track{
+      display:flex;
+      width:max-content;
+      will-change:transform;
+  }
 </style>
 </head>
 
@@ -211,7 +238,7 @@ tailwind.config = {
 <!-- Hero Section -->
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-primary/40 z-10"></div>
-<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-src="assets/landscape/hero.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cinematic vertical portrait of a bride and groom standing in a sun-drenched grand hallway with soft natural light and elegant architectural details"/>
+<img class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" data-src="assets/landscape/hero.webp" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="eager" fetchpriority="high" decoding="async" alt="cinematic vertical portrait of a bride and groom standing in a sun-drenched grand hallway with soft natural light and elegant architectural details"/>
 <div class="relative z-20 text-center px-6 max-w-4xl">
 <p class="text-surface-bright/80 uppercase tracking-[0.3em] text-xs mb-6 font-manrope" data-aos="fade-down" data-aos-delay="200">Cinematic Editorial Photography</p>
 <h1 class="font-notoSerif text-5xl md:text-8xl text-surface-bright leading-tight tracking-tighter mb-8 italic" data-aos="fade-up" data-aos-delay="400">Capturing moments, preserving emotions.</h1>
@@ -266,20 +293,23 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
 <!-- Stories / Highlights -->
 <section class="py-24 bg-[#13342c]" id="stories">
   <div class="max-w-7xl mx-auto px-6 mb-12">
-    <h3 class="text-3xl text-white text-center italic" data-aos="fade-up" data-aos-anchor-placement="top-bottom">The Highlights</h3>
+    <h3 class="text-3xl text-white text-center italic" data-aos="fade-up">
+      The Highlights
+    </h3>
   </div>
-  <div id="carousel" class="flex overflow-x-auto gap-8 px-6 md:px-[20%] no-scrollbar">
-    <div id="track" class="flex gap-8">
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto1.webp" alt="Wedding highlight photo 1"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto4.webp" alt="Wedding highlight photo 2"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/landscape/Lporto4.webp" alt="Wedding highlight photo 3"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p1.webp" alt="Wedding highlight photo 4"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto5.webp" alt="Wedding highlight photo 5"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/prewed-p1.webp" alt="Wedding highlight photo 8"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto6.webp" alt="Wedding highlight photo 6"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p2.webp" alt="Wedding highlight photo 7"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto8.webp" alt="Wedding highlight photo 8"/></div>
-      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p3.webp" alt="Wedding highlight photo 8"/></div>
+
+  <div id="carousel" class="overflow-hidden">
+    <div id="track" class="flex w-max gap-8 px-6 md:px-[20%]">
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto1.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto4.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/landscape/Lporto4.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p1.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto5.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/prewed-p1.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto6.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p2.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/Pporto8.webp"></div>
+      <div class="flex-none w-[300px] md:w-[450px]"><img class="w-full h-[600px] object-cover rounded-full shadow-lg" src="assets/potrait/maternity-p3.webp"></div>
     </div>
   </div>
 </section>
@@ -306,14 +336,36 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
       <div class="w-12 h-[1px] bg-white/40 mx-auto mb-6"></div>
       <p class="text-white/70 max-w-lg mx-auto text-sm leading-relaxed">Choose a collection that resonates with your vision. Every package is crafted to preserve your legacy.</p>
     </div>
-    <div class="flex justify-center mb-14">
-      <div class="bg-white/10 backdrop-blur-md rounded-full p-2 flex gap-2 border border-white/10">
-        <button class="investment-tab bg-white text-[#13342c] px-6 py-3 rounded-full text-sm tracking-wide transition-all duration-300" data-target="wedding">Wedding</button>
-        <button class="investment-tab text-white hover:bg-white/10 px-6 py-3 rounded-full text-sm tracking-wide transition-all duration-300" data-target="prewedding">Prewedding</button>
-        <button class="investment-tab text-white hover:bg-white/10 px-6 py-3 rounded-full text-sm tracking-wide transition-all duration-300" data-target="Engagement">Engagement</button>
-        <button class="investment-tab text-white hover:bg-white/10 px-6 py-3 rounded-full text-sm tracking-wide transition-all duration-300" data-target="Maternity">Maternity</button>
+      <div class="flex justify-center mb-14">
+        <div
+          class="flex overflow-x-auto no-scrollbar gap-2 bg-white/10 backdrop-blur-md rounded-full p-2 border border-white/10 w-full md:w-fit max-w-full">
+
+          <button
+            class="investment-tab whitespace-nowrap bg-white text-[#13342c] px-5 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            data-target="wedding">
+            Wedding
+          </button>
+
+          <button
+            class="investment-tab whitespace-nowrap text-white hover:bg-white/10 px-5 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            data-target="prewedding">
+            Pre-Wedding
+          </button>
+
+          <button
+            class="investment-tab whitespace-nowrap text-white hover:bg-white/10 px-5 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            data-target="Engagement">
+            Engagement
+          </button>
+
+          <button
+            class="investment-tab whitespace-nowrap text-white hover:bg-white/10 px-5 py-3 rounded-full text-sm font-medium transition-all duration-300"
+            data-target="Maternity">
+            Maternity
+          </button>
+
+        </div>
       </div>
-    </div>
 
     <!-- WEDDING -->
     <div id="wedding" class="investment-content">
@@ -426,20 +478,20 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
           <p class="text-secondary font-bold text-2xl mb-8">1.5 Jt</p>
           <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Location</li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Shooting Location</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Unlimited High-Resolution Photos</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Framed Photo (12Rs)</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Flashdisk)</li>
           </ul>
           <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Pre-wedding%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20PRE-WEDDING%20A%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo" target="_blank">Check Availability</a>
         </div>
-        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Popular</div>
           <h3 class="font-notoSerif text-xl mb-2">PREWEDDING B</h3>
           <p class="text-secondary font-bold text-2xl mb-8">2 Jt</p>
           <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Location Sessions(Outdoor–Outdoor or Outdoor–Indoor Studio)</li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Shooting Locations (Outdoor–Outdoor or Outdoor–Indoor Studio)</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Unlimited High-Resolution Photos</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Framed Photo (12Rs)</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Flashdisk)</li>
@@ -451,7 +503,7 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
           <p class="text-secondary font-bold text-2xl mb-8">2.8 Jt</p>
           <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Location Sessions(Outdoor–Outdoor or Outdoor–Indoor Studio)</li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 Shooting Locations (Outdoor–Outdoor or Outdoor–Indoor Studio)</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Unlimited High-Resolution Photos</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Professionally Edited Photos</li>
             <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span>1 Minute Cinematic Teaser</li>
@@ -465,70 +517,218 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
 
     <!-- ENGAGEMENT -->
     <div id="Engagement" class="investment-content hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+      <div class="flex flex-wrap justify-center gap-8">
+
+        <!-- ENGAGEMENT A -->
+        <div class="w-full md:w-[48%] lg:w-[380px] bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
           <h3 class="font-notoSerif text-xl mb-2">ENGAGEMENT A</h3>
-          <p class="text-secondary font-bold text-2xl mb-8">750K</p>
+
+          <p class="text-secondary font-bold text-2xl mb-8">
+            750K
+          </p>
+
           <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Up to 3 Hours Coverage</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Original Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Professionally Edited Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Google Drive)</li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              1 Photographer
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Up to 3 Hours Coverage
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Original Photos
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Professionally Edited Photos
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              All Files Delivered (Google Drive)
+            </li>
           </ul>
-          <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Engagement%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20ENGAGEMENT%20A%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo" target="_blank">Check Availability</a>
+
+          <a
+            class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest"
+            href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Engagement%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20ENGAGEMENT%20A%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo"
+            target="_blank">
+            Check Availability
+          </a>
         </div>
-        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10" data-aos="fade-up" data-aos-delay="100">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Best Deal</div>
+
+        <!-- ENGAGEMENT B -->
+        <div class="relative w-full md:w-[48%] lg:w-[380px] bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">
+            Best Deal
+          </div>
+
           <h3 class="font-notoSerif text-xl mb-2">ENGAGEMENT B</h3>
-          <p class="text-secondary font-bold text-2xl mb-8">1.75 Jt</p>
+
+          <p class="text-secondary font-bold text-2xl mb-8">
+            1.75 Jt
+          </p>
+
           <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Videographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Up to 4 Hours Coverage</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Original Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Professionally Edited Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span>1 Minute Teaser Video</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Flashdisk)</li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              1 Photographer
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              1 Videographer
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Up to 4 Hours Coverage
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Original Photos
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              Professionally Edited Photos
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">videocam</span>
+              1 Minute Teaser Video
+            </li>
+
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+              All Files Delivered (Flashdisk)
+            </li>
           </ul>
-          <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Engagement%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20ENGAGEMENT%20B%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo" target="_blank">Check Availability</a>
+
+          <a
+            class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest"
+            href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Engagement%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20ENGAGEMENT%20B%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo"
+            target="_blank">
+            Check Availability
+          </a>
+
         </div>
+
       </div>
     </div>
-  </div>
 
       <!-- Maternity -->
-    <div id="Maternity" class="investment-content hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10 relative" data-aos="fade-up" data-aos-delay="100">
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">Popular</div>
-          <h3 class="font-notoSerif text-xl mb-2">MATERNITY A</h3>
-          <p class="text-secondary font-bold text-2xl mb-8">750K</p>
-          <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Up to 2 Hours Coverage</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Original Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Professionally Edited Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Google Drive)</li>
-          </ul>
-          <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Maternity%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20MATERNITY%20A%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo" target="_blank">Check Availability</a>
-        </div>
-        <div class="bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
-          <h3 class="font-notoSerif text-xl mb-2">MATERNITY B</h3>
-          <p class="text-secondary font-bold text-2xl mb-8">1.75 Jt</p>
-          <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Photographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>1 Videographer</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Up to 4 Hours Coverage</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Original Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Professionally Edited Photos</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">videocam</span>1 Minute Teaser Video</li>
-            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>All Files Delivered (Flashdisk)</li>
-          </ul>
-          <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest" href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Maternity%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20MATERNITY%20B%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo" target="_blank">Check Availability</a>
+      <div id="Maternity" class="investment-content hidden">
+        <div class="flex flex-wrap justify-center gap-8">
+
+          <!-- MATERNITY A -->
+          <div class="relative w-full md:w-[48%] lg:w-[380px] bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-on-secondary px-4 py-1 text-[10px] tracking-widest uppercase rounded-full">
+              Popular
+            </div>
+
+            <h3 class="font-notoSerif text-xl mb-2">MATERNITY A</h3>
+            <p class="text-secondary font-bold text-2xl mb-8">750K</p>
+
+            <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                1 Photographer
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Up to 2 Hours Coverage
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Original Photos
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Professionally Edited Photos
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                All Files Delivered (Google Drive)
+              </li>
+            </ul>
+
+            <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest"
+              href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Maternity%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20MATERNITY%20A%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo"
+              target="_blank">
+              Check Availability
+            </a>
+
+          </div>
+
+          <!-- MATERNITY B -->
+          <div class="relative w-full md:w-[48%] lg:w-[380px] bg-surface p-10 rounded-lg shadow-sm border border-outline-variant/10">
+
+            <h3 class="font-notoSerif text-xl mb-2">MATERNITY B</h3>
+            <p class="text-secondary font-bold text-2xl mb-8">1.75 Jt</p>
+
+            <ul class="space-y-4 text-sm text-on-surface-variant mb-12">
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                1 Photographer
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                1 Videographer
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Up to 4 Hours Coverage
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Original Photos
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                Professionally Edited Photos
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">videocam</span>
+                1 Minute Teaser Video
+              </li>
+
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                All Files Delivered (Flashdisk)
+              </li>
+
+            </ul>
+
+            <a class="block text-center border border-primary text-primary py-3 rounded hover:bg-primary hover:text-on-primary transition-colors text-xs uppercase tracking-widest"
+              href="https://wa.me/6282135535225?text=%2AFORM%20BOOKING%20%E2%80%94%20ClayCo%2A%0A%0ASilakan%20lengkapi%20data%20berikut%20untuk%20melanjutkan%20reservasi%20booking.%0A%0A%2AData%20Client%2A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Pria%20%3A%0A%E2%80%A2%20Nama%20Lengkap%20Calon%20Pengantin%20Wanita%20%3A%0A%E2%80%A2%20Username%20Instagram%20%3A%0A%E2%80%A2%20Alamat%20%3A%0A%E2%80%A2%20Tanggal%20Acara%20%3A%0A%E2%80%A2%20Jam%20Acara%20%3A%0A%E2%80%A2%20Jenis%20Acara%20%3A%20Maternity%0A%E2%80%A2%20Paket%20yang%20Dipilih%20%3A%20MATERNITY%20B%0A%E2%80%A2%20Pin%20Lokasi%20%2F%20Alamat%20Venue%20%3A%0A%E2%80%A2%20DP%20(Minimal%2030%25)%20%3A%0A%0A%2AInformasi%20Tambahan%2A%0A%E2%80%A2%20Nama%20MUA%20%3A%0A%E2%80%A2%20Vendor%20Dekorasi%20%3A%0A%0A%2ACatatan%20Penting%2A%0A%E2%80%A2%20Pelunasan%20maksimal%20dilakukan%20H%2B3%20setelah%20acara%20berlangsung.%0A%E2%80%A2%20Estimasi%20hasil%20jadi%20kisaran%202%20sampai%203%20minggu.%0A%E2%80%A2%20Tanggal%20booking%20akan%20dianggap%20aman%20setelah%20DP%20diterima.%0A%0A%2AInformasi%20Pembayaran%2A%0A0131298942%0ABank%20BCA%20a.n.%20Joko%20Susilo"
+              target="_blank">
+              Check Availability
+            </a>
+
+          </div>
+
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -538,18 +738,18 @@ A collection of whispers, glances, and the soft <br/>glow of love captured acros
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)]" data-aos="fade-up" data-aos-delay="0">
 <span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
-<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"ClayCo didn't just take photos; they captured the soul of our wedding. Every time I look at our album, I feel the same butterflies I felt that day."</p>
+<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"Suka banget sama hasil foto-fotonya. Terima kasih sudah mengabadikan hari spesial kami dengan sangat baik. Pelayanannya juga ramah dari awal sampai selesai."</p>
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-primary-fixed"></div>
-<div><p class="text-xs font-bold uppercase tracking-widest">Eleanor Vance</p><p class="text-[10px] text-on-surface-variant">Bali Wedding, 2023</p></div>
+<div><p class="text-xs font-bold uppercase tracking-widest">Kia</p><p class="text-[10px] text-on-surface-variant">Semarang, September  - 2025</p></div>
 </div>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(19,52,44,0.06)] md:mt-12" data-aos="fade-up" data-aos-delay="150">
 <span class="material-symbols-outlined text-secondary mb-6 text-4xl">format_quote</span>
-<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"Their editorial eye is unmatched. The cinematic video brought our families to tears. Professional, calm, and incredibly talented."</p>
+<p class="text-primary italic leading-relaxed mb-6 font-notoSerif">"Bagus banget hasilnya! Terima kasih sudah membantu mendokumentasikan momen kami. Semoga sukses selalu untuk ClayCo."</p>
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-secondary-fixed"></div>
-<div><p class="text-xs font-bold uppercase tracking-widest">James Sterling</p><p class="text-[10px] text-on-surface-variant">Lake Como, 2024</p></div>
+<div><p class="text-xs font-bold uppercase tracking-widest">Audi</p><p class="text-[10px] text-on-surface-variant">Salatiga, Mei - 2026</p></div>
 </div>
 </div>
 </div>
@@ -695,39 +895,60 @@ AOS.init({ duration:700, easing:'ease-out-cubic', once:true, offset:40, throttle
   setTimeout(() => { document.querySelectorAll('img[data-src]').forEach(loadImg); }, 1200);
 })();
 
-// ===== CAROUSEL =====
-(function() {
-  const carousel = document.getElementById('carousel');
-  const track = document.getElementById('track');
-  if (!carousel || !track) return;
+// ===== INFINITE CAROUSEL =====
+(() => {
+  const track = document.getElementById("track");
+  if (!track) return;
 
+  // Duplikasi sekali
   track.innerHTML += track.innerHTML;
-  let singleWidth = 0, rafId = null;
-  const SPEED = 1;
+
+  let position = 0;
+  let halfWidth = 0;
+  let animationId;
+
+  const SPEED = 0.7; // desktop (0.5 - 1.2)
 
   function init() {
-    singleWidth = track.scrollWidth / 2;
-    carousel.scrollLeft = singleWidth;
-    if (rafId) cancelAnimationFrame(rafId);
-    (function step() {
-      carousel.scrollLeft += SPEED;
-      if (carousel.scrollLeft >= singleWidth * 2) carousel.scrollLeft -= singleWidth;
-      if (carousel.scrollLeft <= 0) carousel.scrollLeft += singleWidth;
-      rafId = requestAnimationFrame(step);
-    })();
+    halfWidth = track.scrollWidth / 2;
+
+    cancelAnimationFrame(animationId);
+
+    function animate() {
+      position += SPEED;
+
+      if (position >= halfWidth) {
+        position = 0;
+      }
+
+      track.style.transform = `translate3d(${-position}px,0,0)`;
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
   }
 
-  const imgs = track.querySelectorAll('img');
-  let loaded = 0, total = imgs.length;
-  if (!total) { init(); return; }
-  imgs.forEach(img => {
-    if (img.complete && img.naturalWidth > 0) { if (++loaded === total) init(); }
-    else {
-      img.addEventListener('load', () => { if (++loaded === total) init(); });
-      img.addEventListener('error', () => { if (++loaded === total) init(); });
-    }
+  // Tunggu semua gambar selesai
+  const images = track.querySelectorAll("img");
+
+  Promise.all(
+    [...images].map(img => {
+      if (img.complete) return Promise.resolve();
+
+      return new Promise(resolve => {
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    })
+  ).then(init);
+
+  // Resize browser
+  window.addEventListener("resize", () => {
+    position = 0;
+    init();
   });
-  setTimeout(() => { if (!singleWidth) init(); }, 2000);
+
 })();
 
 // ===== NAV SCROLL =====
